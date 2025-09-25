@@ -1,0 +1,10 @@
+<?php
+
+namespace Sentiment\Tests;
+
+use PHPUnit\Framework\TestCase as BaseTestCase;
+
+abstract class TestCase extends BaseTestCase
+{
+    //
+}

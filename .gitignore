@@ -12,3 +12,4 @@ composer.lock
 vagrant_ansible_inventory_default
 Vagrantfile
 .DS_Store
+/var/cache/rector
