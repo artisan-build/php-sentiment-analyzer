@@ -13,8 +13,8 @@
         }
     ],
     "require": {
-    	"php": ">=5.5.9"
-	 },
+        "php": ">=8.3"
+    },
     "autoload": {
         "psr-4": {
             "Sentiment\\": "src/"
@@ -23,6 +23,33 @@
     "autoload-dev": {
         "psr-4": {
             "Sentiment\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "rector/rector": "^2.1",
+        "phpstan/phpstan": "^2.1",
+        "pestphp/pest": "*",
+        "laravel/pint": "^1.25"
+    },
+    "scripts": {
+        "rector": "vendor/bin/rector process",
+        "rector-dry": "vendor/bin/rector process --dry-run",
+        "phpstan": "vendor/bin/phpstan analyse",
+        "phpstan-baseline": "vendor/bin/phpstan analyse --generate-baseline",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "pint": "vendor/bin/pint",
+        "pint-test": "vendor/bin/pint --test",
+        "ready": [
+            "@rector",
+            "@pint",
+            "@phpstan",
+            "@test"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
